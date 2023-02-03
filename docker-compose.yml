@@ -1,0 +1,21 @@
+version: "3.2"
+
+services:
+    
+  jupyter_notebook:
+    build:
+      context: ./docker_image
+    command: jupyter notebook --no-browser --port=8888 --ip=0.0.0.0 --notebook-dir=/home/simon/jupyter/notebooks/
+    hostname: jupyter
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
+    ports:
+      - "8888:8888"
+    volumes:
+      # - /home/simon/documentation/soar/general_documentation/jupyter-notebooks:/home/simon/jupyter/notebooks/:z
+      - /home/simon/deployments/jupyter/data:/home/simon/.local/share/jupyter:z
+      - /home/simon/deployments/jupyter/config:/home/simon/.jupyter:z
+      # - /home/simon/raid/data/:/home/simon/data:z
+  
+    restart: always
