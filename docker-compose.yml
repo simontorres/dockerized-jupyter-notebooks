@@ -13,7 +13,7 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      # - /home/simon/documentation/soar/general_documentation/jupyter-notebooks:/home/simon/jupyter/notebooks/:z
+      - /home/simon/documentation/noirlab/general_documentation/jupyter-notebooks:/home/simon/jupyter/notebooks/:z
       - /home/simon/deployments/jupyter/data:/home/simon/.local/share/jupyter:z
       - /home/simon/deployments/jupyter/config:/home/simon/.jupyter:z
       # - /home/simon/raid/data/:/home/simon/data:z
